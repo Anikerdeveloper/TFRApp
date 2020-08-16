@@ -14,6 +14,8 @@ struct TFRLAV {
 
 TFRLAV tv;
 
+std::string TFRFILES = "";
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -63,4 +65,9 @@ void MainWindow::on_ValueAttLine_editingFinished()
 
    tv.Value = ui->ValueAttLine->text();
    ui->OutLabel->setText(QString::fromStdString(fr.GetLineOfAttribute(tv.Tag.toStdString(), tv.Attribute.toStdString(), tv.Value.toStdString())));
+}
+
+void MainWindow::on_linefile_returnPressed()
+{
+    fr.TFRFile(ui->linefile->text().toStdString());
 }

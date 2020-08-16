@@ -26,6 +26,8 @@ private slots:
 
     void on_ValueAttLine_editingFinished();
 
+    void on_linefile_returnPressed();
+
 private:
     Ui::MainWindow *ui;
 };
